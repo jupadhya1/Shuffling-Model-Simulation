@@ -53,6 +53,18 @@ Cut off the first k cards with probability (n k)2^n, put into the left deck, and
 Drop cards in sequence, where the next card comes from one of the two decks with probability proportional to the size of the deck at that time.
 Suppose at a step there are L cards in the left deck and R cards in the right deck. A card is dropped from left with probability L/L+R, and from right otherwise.
 
+One iteration of the riffle shuffle is defined as:
+
+Split the deck into two piles
+Merge the two piles by taking one card from the top of either pile in proportion to the number of cards remaining in the pile. To start with the probability for both piles will be 26/52 (50-50), then 25/51-26/51 etc etc as the riffle progresses.
+The merged deck is now the new "shuffled" deck
+
+One iteration of the overhand shuffle is defined as:
+
+Take a group of consecutive cards from the top of the deck. For our purposes up to 20% of the deck seems like a good amount.
+Place that group on top of a second pile
+Repeat these steps until there are no cards remaining in the original deck
+The second pile is now the new "shuffled" deck
 
 ## Second Approach
 python GSR_Algo_Second_Approach.py
