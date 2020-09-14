@@ -6,7 +6,7 @@ from sys import argv
 
 from tf_shuffle import shuffle
 
-def three_consecutive(deck):
+def check_shuffle(deck):
     count = 0
     for i in range(len(deck)-2):
         diff = deck[i+1] - deck[i]
@@ -16,7 +16,7 @@ def three_consecutive(deck):
             count = count
     return count
 
-def repeated(deck):
+def recurse(deck):
     count = 0
     for i in range(len(deck)-1):
         if deck[i] == deck[i+1]:
@@ -42,14 +42,14 @@ num_shuffles = 10
 
 
 
-deck2_shuffles = np.zeros((num_shuffles+1, len(DT26)))
-deck3_shuffles = np.zeros((num_shuffles+1, len(DT52)))
-deck4_shuffles = np.zeros((num_shuffles+1, len(DT104)))
+shuffle_deck_2 = np.zeros((num_shuffles+1, len(DT26)))
+shuffle_deck_3 = np.zeros((num_shuffles+1, len(DT52)))
+shuffle_deck_4 = np.zeros((num_shuffles+1, len(DT104)))
 
 
-deck2_shuffles[0] = DT26
-deck3_shuffles[0] = DT52
-deck4_shuffles[0] = DT104
+shuffle_deck_2[0] = DT26
+shuffle_deck_3[0] = DT52
+shuffle_deck_4[0] = DT104
 
 print("Let's consider where the original top and bottom cards of the unshuffled deck end up after %s shuffles." %(num_shuffles))
 print()
@@ -77,9 +77,9 @@ for i in range(1, num_shuffles):
     S4 = shuffle(S4).tolist()
 
 
-    deck2_shuffles[i] = S2
-    deck3_shuffles[i] = S3
-    deck4_shuffles[i] = S4
+    shuffle_deck_2[i] = S2
+    shuffle_deck_3[i] = S3
+    shuffle_deck_4[i] = S4
 
 
 shuffled_deck_list = [S2, S3, S4]
@@ -115,8 +115,8 @@ print("Let's compare consecutive shuffles of 26 cards:")
 print()
 grps = np.zeros(num_shuffles)
 for row in range(num_shuffles):
-    print("Shuffle %s: %s\n" %(row, deck2_shuffles[row]))
-    grps[row] = three_consecutive(deck2_shuffles[row])
+    print("Shuffle %s: %s\n" %(row, shuffle_deck_2[row]))
+    grps[row] = check_shuffle(shuffle_deck_2[row])
 print("List of number of ordered sequences at each iteration: ", grps)
 plt.plot(grps)
 plt.show()
@@ -125,8 +125,8 @@ print("Let's compare consecutive shuffles of 52 cards:")
 print()
 grps = np.zeros(num_shuffles)
 for row in range(num_shuffles):
-    print("Shuffle %s: %s\n" %(row, deck3_shuffles[row]))
-    grps[row] = three_consecutive(deck3_shuffles[row])
+    print("Shuffle %s: %s\n" %(row, shuffle_deck_3[row]))
+    grps[row] = check_shuffle(shuffle_deck_3[row])
 print("List of number of ordered sequences at each iteration: ", grps)
 print("And we can see that at around 7 shuffles, we stop seeing two number groupings as much as well.")
 plt.plot(grps)
@@ -136,8 +136,8 @@ print("Let's compare consecutive shuffles of 104 cards:")
 print()
 grps = np.zeros(num_shuffles)
 for row in range(num_shuffles):
-    ## print("Shuffle %s: %s\n" %(row, deck4_shuffles[row]))
-    grps[row] = three_consecutive(deck4_shuffles[row])
+    ## print("Shuffle %s: %s\n" %(row, shuffle_deck_4[row]))
+    grps[row] = check_shuffle(shuffle_deck_4[row])
 print("List of number of ordered sequences at each iteration: ", grps)
 plt.plot(grps)
 plt.show()
