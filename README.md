@@ -15,7 +15,7 @@ pip install -r requirements.txt
 Use --help to see tf_shuffle.py Usage.
 
 ```bash
-  usage: tf_shuffle.py [-h] [--deck_size DECK_SIZE] 
+  usage: tf_shuffle.py [-h] [DECK_SIZE] 
 
 optional arguments:
   -h, --help            show this help message and exit
