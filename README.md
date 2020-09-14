@@ -46,14 +46,13 @@ File attached as Results.docx
 
 
 ## 
-'''
-Steps to perform:
+## Steps to perform:
 Given a deck of n cards, at each round, do as follows.
 Split the original deck into two decks according to the binomial distribution Bin(n,1/2).
 Cut off the first k cards with probability (n k)2^n, put into the left deck, and put the rest n−k cards into the right deck.
 Drop cards in sequence, where the next card comes from one of the two decks with probability proportional to the size of the deck at that time.
 Suppose at a step there are L cards in the left deck and R cards in the right deck. A card is dropped from left with probability L/L+R, and from right otherwise.
-'''
+
 
 ## Second Approach
 python GSR_Algo_Second_Approach.py
