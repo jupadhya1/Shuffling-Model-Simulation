@@ -28,8 +28,13 @@ Example:
 ```bash
   python3 shuffle.py 52 
 ```
+## Second Approach
+python GSR_Algo_Second_Approach.py
 
+## Test
+boundaryCheckGSRalgo(26,3,20)
 
+It will generate the output for first three sequence
 
 ---
 
