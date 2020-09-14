@@ -26,7 +26,7 @@ Riffle shuffle.
 
 Example:
 ```bash
-  python3 shuffle.py --deck_size 52 
+  python3 shuffle.py 52 
 ```
 
 
