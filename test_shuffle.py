@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import plotly.plotly as py
 from sys import argv
-%matplotlib inline
+#%matplotlib inline
 
 from tf_shuffle import shuffle
 
