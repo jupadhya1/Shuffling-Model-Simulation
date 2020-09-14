@@ -1,3 +1,5 @@
+"""
+
 # -*- coding: utf-8 -*-
 """TensorFlow with GPU
 
@@ -78,7 +80,7 @@ print('GPU (s):')
 gpu_time = timeit.timeit('gpu()', number=10, setup="from __main__ import gpu")
 print(gpu_time)
 print('GPU speedup over CPU: {}x'.format(int(cpu_time/gpu_time)))
-
+"""
 
 
 
@@ -89,7 +91,7 @@ import numpy as np
 import sys
 import time
 import matplotlib.pyplot as plt
-%matplotlib inline
+#%matplotlib inline
 from random import randint
 
 """
@@ -274,7 +276,7 @@ for i in range(num_shuffles):
     deck4_shuffles[i+1] = S4
 
 ## putting them in a list to make easier and shorter to access
-shuffled_deck_list = [S1, S2, S3, S4]
+shuffled_deck_list = [S2, S3, S4]
 
 for i in range(n):
     ## store the first and last elements(top and bottom cards) of each deck
