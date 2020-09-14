@@ -68,6 +68,7 @@ The second pile is now the new "shuffled" deck
 
 ## Second Approach
 python GSR_Algo_Second_Approach.py
+More inline for random shuffling
 
 ## Test
 boundaryCheckGSRalgo(26,3,20)
